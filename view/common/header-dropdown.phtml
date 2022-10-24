@@ -1,0 +1,28 @@
+<div class="banner">
+    <a href="http://archive.manitos.net/s/main/page/welcome" class="button">This project is part of the Manitos Community Memory Project initiative. Learn more here</a>
+</div>
+
+<div class="top-bar show-for-small-only">
+    <nav class="top-bar-left">
+        <div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="large">
+            <button class="menu-toggle" type="button" data-toggle="offCanvas" aria-label="<?php echo $this->translate('Menu'); ?>"><i class="fas fa-bars"></i></button>
+        </div>
+        <?php $siteLogo = ($this->themeSetting('logo')) ? '<img src="' . $this->themeSettingAssetUrl('logo') . '" title="Logo" alt="">' : ''; ?>
+        <h1 class="site-title"><a href="<?php echo $site->url(); ?>"><?php echo $siteLogo; ?><span class="site-title-label <?php echo ($siteLogo !== '') ? 'sr-only' : ''; ?>"><?php echo $site->title(); ?></span></a></h1> 
+    </nav>
+    <div class="top-bar-right" id="responsive-menu">
+        <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'dropdown']); ?>  
+    </div>
+</div>
+
+<div class="site-title-container hide-for-small-only">
+    <?php $siteLogo = ($this->themeSetting('logo')) ? '<img src="' . $this->themeSettingAssetUrl('logo') . '" title="Logo" alt="">' : ''; ?>
+    <h1 class="site-title"><a href="<?php echo $site->url(); ?>"><?php echo $siteLogo; ?><span class="site-title-label <?php echo ($siteLogo !== '') ? 'sr-only' : ''; ?>"><?php echo $site->title(); ?></span></a></h1> 
+
+
+</div>
+
+<div class="large-menu hide-for-small-only" id="responsive-menu" >
+    <?php echo $site->publicNav()->menu()->setPartial('common/foundation-navigation.phtml')->renderPartialWithParams(['layout' => 'dropdown']); ?>
+</div>
+
